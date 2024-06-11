@@ -3,6 +3,7 @@ let selectedQuestions = [];
 let currentQuestion = 0;
 let score = 0;
 let incorrectAnswers = [];
+let userAnswers = [];
 
 $(document).ready(function() {
     loadQuestions();
@@ -13,6 +14,18 @@ $(document).ready(function() {
 
     $('#retry-button').on('click', function() {
         startQuiz();
+    });
+
+    $('#prev-button').on('click', function() {
+        prevQuestion();
+    });
+
+    $('#exit-button').on('click', function() {
+        exitQuiz();
+    });
+
+    $('#exit-button-result').on('click', function() {
+        exitQuiz();
     });
 });
 
@@ -32,6 +45,7 @@ function startQuiz() {
     currentQuestion = 0;
     score = 0;
     incorrectAnswers = [];
+    userAnswers = new Array(selectedQuestions.length).fill(null);
     $('#start-screen').hide();
     $('#result-screen').hide();
     $('#question-screen').show();
@@ -44,7 +58,7 @@ function getRandomQuestions(questions, num) {
 }
 
 function showQuestion() {
-    if (currentQuestion < selectedQuestions.length) {
+    if (currentQuestion >= 0 && currentQuestion < selectedQuestions.length) {
         const questionData = selectedQuestions[currentQuestion];
         console.log('Showing question:', questionData); // Debugging
         $('#question').text(questionData.question);
@@ -53,30 +67,56 @@ function showQuestion() {
         optionsDiv.empty();
         questionData.options.forEach(option => {
             const button = $('<button></button>').text(option);
-            button.on('click', () => checkAnswer(option));
+            button.on('click', () => selectAnswer(option));
             optionsDiv.append(button);
         });
-    } else {
+
+        // Habilitar o deshabilitar el botón "Volver"
+        if (currentQuestion === 0) {
+            $('#prev-button').hide();
+        } else {
+            $('#prev-button').show();
+        }
+    } else if (currentQuestion === selectedQuestions.length) {
         showResults();
     }
 }
 
-function checkAnswer(selectedOption) {
-    if (selectedOption === selectedQuestions[currentQuestion].answer) {
-        score++;
-    } else {
-        incorrectAnswers.push({
-            question: selectedQuestions[currentQuestion].question,
-            selectedOption: selectedOption,
-            correctAnswer: selectedQuestions[currentQuestion].answer,
-            info: selectedQuestions[currentQuestion].info
-        });
-    }
+function selectAnswer(option) {
+    userAnswers[currentQuestion] = option;
     currentQuestion++;
     showQuestion();
 }
 
+function prevQuestion() {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        showQuestion();
+    }
+}
+
+function exitQuiz() {
+    $('#question-screen').hide();
+    $('#result-screen').hide();
+    $('#start-screen').show();
+}
+
 function showResults() {
+    score = 0;
+    incorrectAnswers = [];
+    userAnswers.forEach((answer, index) => {
+        if (answer === selectedQuestions[index].answer) {
+            score++;
+        } else {
+            incorrectAnswers.push({
+                question: selectedQuestions[index].question,
+                selectedOption: answer,
+                correctAnswer: selectedQuestions[index].answer,
+                info: selectedQuestions[index].info
+            });
+        }
+    });
+
     $('#question-screen').hide();
     $('#result').text(`Tu puntuación: ${score} de ${selectedQuestions.length}`);
     const errorListDiv = $('#error-list');
@@ -86,12 +126,14 @@ function showResults() {
         errorItem.html(`<strong>Pregunta:</strong> ${error.question}<br><strong>Tu respuesta:</strong> ${error.selectedOption}<br><strong>Respuesta correcta:</strong> ${error.correctAnswer}<br><strong>Info:</strong> ${error.info}<br><br>`);
         errorListDiv.append(errorItem);
     });
-    if (score / selectedQuestions.length >= 0.8) {
+
+    if (score === selectedQuestions.length) {
         $('#celebration').show();
-        errorListDiv.append(`<p>🎉 ¡Felicidades! Has aprobado. 🎉</p>`);
+        errorListDiv.append(`<p>🎉 ¡Felicidades! Has aprobado con una puntuación perfecta. 🎉</p>`);
     } else {
         $('#celebration').hide();
-        errorListDiv.append(`<p>Mejor suerte para la próxima. Aquí tienes algunos consejos para mejorar:</p>`);
+        errorListDiv.append(`<p>Mejor suerte para la próxima. ¡Vuelve a intentarlo para recibir un premio!</p>`);
     }
+
     $('#result-screen').show();
 }
