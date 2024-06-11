@@ -1,0 +1,43 @@
+/* Añadir estilos y animaciones */
+#celebration {
+    font-size: 2em;
+    color: green;
+    text-align: center;
+    animation: celebrationAnimation 3s linear infinite;
+}
+
+@keyframes celebrationAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
+
+/* Estilos básicos para el juego */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #DAD7CD;
+    color: #344E41;
+}
+
+button {
+    background-color: #588157;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3A5A40;
+}
+
+#question-image {
+    max-width: 100%;
+    height: auto;
+}
+
+#errors p {
+    text-align: left;
+}

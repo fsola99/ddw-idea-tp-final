@@ -1,0 +1,86 @@
+[
+    {
+        "question": "¿Cuál de las siguientes acciones ayuda más a reducir la contaminación del aire?",
+        "image": "air_pollution.jpg",
+        "options": ["Usar transporte público", "Reciclar plástico", "Comer menos carne", "Usar bolsas de papel"],
+        "answer": "Usar transporte público",
+        "info": "Usar transporte público reduce el número de vehículos en la carretera, disminuyendo las emisiones de gases contaminantes."
+    },
+    {
+        "question": "¿Cuál es la mejor manera de conservar el agua en casa?",
+        "image": "water_conservation.jpg",
+        "options": ["Regar las plantas todos los días", "Tomar duchas cortas", "Lavar el coche cada semana", "Llenar la bañera cada día"],
+        "answer": "Tomar duchas cortas",
+        "info": "Tomar duchas cortas ayuda a reducir el consumo de agua, un recurso limitado y vital."
+    },
+    {
+        "question": "¿Cuál de las siguientes prácticas ayuda a reducir la huella de carbono?",
+        "image": "carbon_footprint.jpg",
+        "options": ["Apagar las luces al salir de una habitación", "Dejar los aparatos electrónicos en modo stand-by", "Usar platos desechables", "Lavar el coche con manguera todos los días"],
+        "answer": "Apagar las luces al salir de una habitación",
+        "info": "Apagar las luces al salir de una habitación reduce el consumo de electricidad, disminuyendo la huella de carbono."
+    },
+    {
+        "question": "¿Qué es el reciclaje?",
+        "image": "recycling.jpg",
+        "options": ["El proceso de deshacerse de residuos sin clasificar", "El proceso de convertir materiales usados en nuevos productos", "La quema de residuos para generar energía", "El uso de productos desechables"],
+        "answer": "El proceso de convertir materiales usados en nuevos productos",
+        "info": "El reciclaje permite reutilizar materiales, reduciendo la necesidad de extraer nuevos recursos y disminuyendo los residuos."
+    },
+    {
+        "question": "¿Cuál es la mejor opción para reducir el uso de plástico?",
+        "image": "reduce_plastic.jpg",
+        "options": ["Usar bolsas de plástico para las compras", "Comprar productos en envases de plástico", "Utilizar bolsas reutilizables", "Comprar botellas de agua desechables"],
+        "answer": "Utilizar bolsas reutilizables",
+        "info": "Usar bolsas reutilizables reduce la cantidad de plástico que termina en los vertederos y en el medio ambiente."
+    },
+    {
+        "question": "¿Qué tipo de energía es considerada renovable?",
+        "image": "renewable_energy.jpg",
+        "options": ["Energía nuclear", "Energía eólica", "Energía fósil", "Energía de biomasa"],
+        "answer": "Energía eólica",
+        "info": "La energía eólica es renovable porque se obtiene del viento, una fuente inagotable y no contaminante."
+    },
+    {
+        "question": "¿Qué significa la sigla “RSU” en términos ambientales?",
+        "image": "rsu.jpg",
+        "options": ["Recursos Sostenibles Unidos", "Residuos Sólidos Urbanos", "Red de Suministro Universal", "Residuos Secos y Útiles"],
+        "answer": "Residuos Sólidos Urbanos",
+        "info": "RSU significa Residuos Sólidos Urbanos, que se refiere a los desechos generados en las zonas urbanas, como la basura doméstica."
+    },
+    {
+        "question": "¿Cuál es una forma efectiva de conservar energía en el hogar?",
+        "image": "conserve_energy.jpg",
+        "options": ["Dejar las luces encendidas", "Usar bombillas LED", "Mantener el aire acondicionado encendido todo el día", "Abrir la nevera frecuentemente"],
+        "answer": "Usar bombillas LED",
+        "info": "Usar bombillas LED ayuda a conservar energía porque son más eficientes y duran más que las bombillas tradicionales."
+    },
+    {
+        "question": "¿Cuál de los siguientes materiales tarda más en descomponerse en el medio ambiente?",
+        "image": "decompose.jpg",
+        "options": ["Papel", "Vidrio", "Plástico", "Aluminio"],
+        "answer": "Vidrio",
+        "info": "El vidrio tarda más en descomponerse en el medio ambiente, pudiendo durar miles de años si no se recicla."
+    },
+    {
+        "question": "¿Cuál es la principal causa de la deforestación?",
+        "image": "deforestation.jpg",
+        "options": ["Plantación de árboles", "Construcción de parques", "Agricultura y ganadería", "Caza de animales"],
+        "answer": "Agricultura y ganadería",
+        "info": "La agricultura y la ganadería son las principales causas de la deforestación, ya que requieren grandes extensiones de tierra."
+    },
+    {
+        "question": "¿Qué animal está en peligro de extinción debido a la pérdida de su hábitat?",
+        "image": "endangered_species.jpg",
+        "options": ["Gato doméstico", "Oso polar", "Perro labrador", "Paloma"],
+        "answer": "Oso polar",
+        "info": "El oso polar está en peligro de extinción debido a la pérdida de su hábitat causada por el cambio climático."
+    },
+    {
+        "question": "¿Qué tipo de producto es más amigable con el medio ambiente?",
+        "image": "eco_friendly.jpg",
+        "options": ["Producto de un solo uso", "Producto reciclable", "Producto importado", "Producto empaquetado en plástico"],
+        "answer": "Producto reciclable",
+        "info": "Los productos reciclables son más amigables con el medio ambiente porque pueden reutilizarse y reducir la cantidad de residuos."
+    }
+]
